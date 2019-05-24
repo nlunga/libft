@@ -6,31 +6,33 @@
 #    By: nlunga <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 13:45:30 by nlunga            #+#    #+#              #
-#    Updated: 2019/05/23 14:12:52 by nlunga           ###   ########.fr        #
+#    Updated: 2019/05/24 08:55:25 by nlunga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
+NAME = libft.a
 
-SRCS = *.c
+FLAGS = -Wall -Werror -Wextra -c
 
-OBJECTS = *.o
+SRCS = ./ft_isalnum.c ./ft_isalpha.c ./ft_isascii.c ./ft_isdigit.c \
+   	   ./ft_isprint.c ./ft_strcat.c ./ft_strcpy.c ./ft_strlen.c ./ft_strncat.c \
+   	   ./ft_strncpy.c ./ft_tolower.c ./ft_toupper.c \
 
-HEADER = libft.h
+OBJS = $(SRCS:.c=.o)
 
-FLAGS = -Wall -Werror -Wextra
-
-all : $(NAME)
+all: $(NAME)
 
 $(NAME):
-	gcc -o $(NAME) $(FLAGS) $(SRCS)   
-	ar rc libft.a $(OBJECTS)
-	ranlib libft.a
+	gcc $(FLAGS) $(SRCS)   
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: re, fclean, clean, all
