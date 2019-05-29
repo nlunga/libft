@@ -6,7 +6,7 @@
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 13:22:32 by nlunga            #+#    #+#             */
-/*   Updated: 2019/05/24 15:22:44 by nlunga           ###   ########.fr       */
+/*   Updated: 2019/05/27 14:52:48 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	unsigned char *str;
+	size_t			i;
+	unsigned char	*str;
 
 	i = 0;
-	str = (unsigned char *) s;
+	str = (unsigned char *)s;
 	if (n > 0)
-	{	
+	{
 		while (i < n)
 		{
 			str[i] = 0;
 			i++;
 		}
-	}		
+	}
 }
