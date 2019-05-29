@@ -6,7 +6,7 @@
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 08:38:23 by nlunga            #+#    #+#             */
-/*   Updated: 2019/05/28 10:20:32 by nlunga           ###   ########.fr       */
+/*   Updated: 2019/05/29 12:47:41 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ size_t				ft_strlcat(char *to, const char *from, size_t dstsize);
 char				*ft_strchr(const char *str, int c);
 char				*ft_strrchr(const char *str, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
+char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int					ft_atoi(const char *str);
 int					ft_isdigit(int nb);
 int					ft_isalpha(int nb);
