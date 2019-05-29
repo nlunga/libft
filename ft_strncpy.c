@@ -6,7 +6,7 @@
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 08:30:23 by nlunga            #+#    #+#             */
-/*   Updated: 2019/05/24 09:26:00 by nlunga           ###   ########.fr       */
+/*   Updated: 2019/05/28 09:37:46 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t len)
 	while (i < len && src[i])
 	{
 		dest[i] = src[i];
-		i++;	
+		i++;
 	}
 	while (i < len)
 		dest[i] = '\0';
