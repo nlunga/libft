@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/04 14:51:14 by nlunga            #+#    #+#             */
+/*   Updated: 2019/06/04 14:51:50 by nlunga           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_strequ(char const *s1, char const *s2)
@@ -12,5 +24,5 @@ int	ft_strequ(char const *s1, char const *s2)
 	if (((unsigned char)s1[i]) == ((unsigned char)s2[i]))
 		return (1);
 	else
-		return (0);	
+		return (0);
 }
