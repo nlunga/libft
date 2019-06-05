@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 10:37:10 by nlunga            #+#    #+#             */
-/*   Updated: 2019/06/05 15:30:54 by nlunga           ###   ########.fr       */
+/*   Created: 2019/06/05 08:28:20 by nlunga            #+#    #+#             */
+/*   Updated: 2019/06/05 14:48:43 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *to, const char *from)
+size_t		ft_strlcat(char *to, const char *from, size_t dstsize)
 {
-	int i;
-	int j;
+	size_t		len;
+	size_t		i;
 
+	len = ft_strlen(to);
 	i = 0;
-	j = 0;
-	while (to[i])
-		i++;
-	while (from[j])
+	while (i + len < dstsize - 1 && from[i] && dstsize > 0)
 	{
-		to[i] = from[j];
+		to[len + i] = from[i];
 		i++;
-		j++;
 	}
-	to[i] = '\0';
-	return (to);
+	to[len + i] = '\0';
+	if (dstsize < i + len)
+		return (dstsize + ft_strlen(from));
+	return (len + ft_strlen(from));
 }
