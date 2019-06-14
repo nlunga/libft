@@ -6,7 +6,7 @@
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 14:49:35 by nlunga            #+#    #+#             */
-/*   Updated: 2019/06/03 13:46:38 by nlunga           ###   ########.fr       */
+/*   Updated: 2019/06/07 14:12:19 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int		result;
-	int		neg;
+	long int		result;
+	long int		neg;
 
 	result = 0;
 	while ((*str >= '\t' && *str <= '\r') || *str == 32)
