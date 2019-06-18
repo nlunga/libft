@@ -6,7 +6,7 @@
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 09:22:48 by nlunga            #+#    #+#             */
-/*   Updated: 2019/06/11 15:32:26 by nlunga           ###   ########.fr       */
+/*   Updated: 2019/06/18 11:15:20 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 char	*ft_itoa(int n)
 {
-	char	*p;
+	int		i;
+	char	*fresh;
+	int		temp;
 
-	p = ft_strnew(20) + 19;
-	if (n >= 0 && p)
+	i = ft_intlen(n);
+	temp = n;
+	if (!(fresh = ft_strnew(i)))
+		return (NULL);
+	fresh[i] = '\0';
+	i--;
+	if (temp == -2147483648)
+		return (fresh = ft_strdup("-2147483648"));
+	if (temp < 0)
+		temp = temp * -1;
+	while (temp >= 10)
 	{
-		*--p = '0' + (n % 10);
-		n /= 10;
-		while (n != 0)
-		{
-			*--p = '0' + (n % 10);
-			n /= 10;
-		}
+		fresh[i] = (temp % 10) + '0';
+		temp = temp / 10;
+		i--;
 	}
-	else if (p)
-	{
-		*--p = '0' - (n % 10);
-		n /= 10;
-		while (n != 0)
-		{
-			*--p = '0' - (n % 10);
-			n /= 10;
-		}
-		*--p = '-';
-	}
-	return (p);
+	fresh[i] = (temp % 10) + '0';
+	i--;
+	if (n < 0)
+		fresh[i] = '-';
+	return (fresh);
 }
