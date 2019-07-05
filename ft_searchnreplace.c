@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_searchnreplace.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/15 12:33:29 by nlunga            #+#    #+#             */
-/*   Updated: 2019/06/18 09:02:40 by nlunga           ###   ########.fr       */
+/*   Created: 2019/07/05 19:01:03 by nlunga            #+#    #+#             */
+/*   Updated: 2019/07/05 19:07:29 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
+char	*ft_searchnreplace(char **str, char gt, char ch)
 {
-	t_list	*fresh;
-	t_list	*start;
+	char	*pstr;
 
-	if (lst == NULL || f == NULL)
+	if ((pstr = ft_strchr(*str, gt)) == NULL)
 		return (NULL);
-	fresh = f(lst);
-	start = fresh;
-	while (lst->next != NULL)
-	{
-		fresh->next = f(lst->next);
-		fresh = fresh->next;
-		lst = lst->next;
-	}
-	return (start);
+	*pstr = ch;
+	return(pstr);
 }

@@ -6,7 +6,7 @@
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 08:38:23 by nlunga            #+#    #+#             */
-/*   Updated: 2019/06/19 08:26:02 by nlunga           ###   ########.fr       */
+/*   Updated: 2019/07/05 19:15:34 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,14 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *str);
 int					ft_intlen(int n);
+char				*ft_noWhite(char const *s);
 char				*ft_strdup(const char *str);
 char				*ft_strcpy(char *dest, const char *src);
+char				*ft_strtok(char *str, const char *delim);
 char				*ft_strncpy(char *dest, const char *src, size_t len);
 char				*ft_strcat(char *to, const char *from);
+char				*ft_strdupnfree(char **str);
+char				*ft_searchnreplace(char **str, char gt, char ch);
 char				*ft_strncat(char *to, const char *from, size_t n);
 size_t				ft_strlcat(char *to, const char *from, size_t dstsize);
 char				*ft_strchr(const char *str, int c);

@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_searchnreplace.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 08:08:24 by nlunga            #+#    #+#             */
-/*   Updated: 2019/05/22 13:39:26 by nlunga           ###   ########.fr       */
+/*   Created: 2019/07/05 19:01:03 by nlunga            #+#    #+#             */
+/*   Updated: 2019/07/05 19:07:29 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_searchnreplace(char **str, char gt, char ch)
 {
-	size_t i;
+	char	*pstr;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	if ((pstr = ft_strchr(*str, gt)) == NULL)
+		return (NULL);
+	*pstr = ch;
+	return(pstr);
 }

@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 10:57:12 by nlunga            #+#    #+#             */
-/*   Updated: 2019/06/06 13:42:04 by nlunga           ###   ########.fr       */
+/*   Created: 2019/06/15 12:33:29 by nlunga            #+#    #+#             */
+/*   Updated: 2019/06/21 10:11:51 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
 {
-	char			*dest;
-	char			*srcs;
-	size_t			i;
+	t_list	*fresh;
+	t_list	*start;
 
-	dest = (char *)dst;
-	srcs = (char *)src;
-	i = 0;
-	if (dest == NULL && srcs == NULL)
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	while (i < n)
+	fresh = f(lst);
+	start = fresh;
+	while (lst->next != NULL)
 	{
-		dest[i] = srcs[i];
-		i++;
+		fresh->next = f(lst->next);
+		fresh = fresh->next;
+		lst = lst->next;
 	}
-	return (dest);
+	return (start);
 }

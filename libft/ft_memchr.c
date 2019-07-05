@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcspn.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/19 08:23:27 by nlunga            #+#    #+#             */
-/*   Updated: 2019/06/19 12:47:16 by nlunga           ###   ########.fr       */
+/*   Created: 2019/06/06 13:16:59 by nlunga            #+#    #+#             */
+/*   Updated: 2019/06/15 09:06:30 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strcspn(const char *s, const char *reject)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t		i;
-	size_t		j;
+	size_t					index;
+	unsigned const char		*str;
 
-	i = 0;
-	while (s[i] != '\0')
+	index = 0;
+	str = (unsigned const char *)s;
+	while (n)
 	{
-		j = 0;
-		while (reject[j] != '\0')
-		{
-			if ((char)s[i] == (char)reject[j])
-				return (i);
-			j++;
-		}
-		i++;
+		if (str[index] == (unsigned char)c)
+			return ((char *)&str[index]);
+		index++;
+		n--;
 	}
-	return (i);
+	return (NULL);
 }
