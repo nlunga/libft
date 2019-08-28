@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isprime.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 13:22:32 by nlunga            #+#    #+#             */
-/*   Updated: 2019/08/14 14:13:30 by nlunga           ###   ########.fr       */
+/*   Created: 2019/08/28 09:23:53 by nlunga            #+#    #+#             */
+/*   Updated: 2019/08/28 09:28:45 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_isprime(int n)
 {
-	size_t			i;
-	unsigned char	*str;
-
-	i = 0;
-	str = (unsigned char *)s;
-	if (n > 0)
-	{
-		while (i < n)
-		{
-			str[i] = 0;
-			i++;
-		}
-	}
+	int	i;
+	i = 2;
+	while (i < n)
+		if (!(n % i++))
+			return (0);
+	return (1);
 }

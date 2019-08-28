@@ -6,7 +6,7 @@
 /*   By: nlunga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 08:38:23 by nlunga            #+#    #+#             */
-/*   Updated: 2019/07/05 19:15:34 by nlunga           ###   ########.fr       */
+/*   Updated: 2019/08/28 09:29:11 by nlunga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char				*ft_strnstr(const char *hay, const char *needle, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
+int					ft_isprime(int n);
 int					ft_isdigit(int nb);
 int					ft_isalpha(int nb);
 int					ft_isalnum(int nb);
